@@ -13,7 +13,7 @@ model = load_model()
 # Configuración de la página
 st.set_page_config(
     page_title="Predictor Cardíaco Avanzado",
-    page_icon="❤️",
+    #page_icon="❤️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -122,10 +122,10 @@ if submitted:
         
         # Mostrar resultados
         st.markdown("---")
-        st.subheader("📊 Resultados del Análisis")
+        st.subheader("Resultados del Análisis")
         
         risk_class = "high-risk" if prediction == 1 else "low-risk"
-        result_icon = "⚠️" if prediction == 1 else "✅"
+        #result_icon = "⚠️" if prediction == 1 else "✅"
         result_text = "Riesgo Elevado" if prediction == 1 else "Riesgo Bajo"
         
         st.markdown(f"""
@@ -182,7 +182,7 @@ para diagnóstico y tratamiento.
 """)
 
 # Mostrar datos técnicos en expander
-with st.expander("ℹ️ Información Técnica"):
+with st.expander("ℹ Información Técnica"):
     st.markdown("""
     **Modelo utilizado:** Random Forest Classifier  
     **Precisión del modelo:** ~85% (validación cruzada)  
