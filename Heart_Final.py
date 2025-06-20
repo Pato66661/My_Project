@@ -13,7 +13,6 @@ model = load_model()
 # Configuración de la página
 st.set_page_config(
     page_title="Predictor Cardíaco Avanzado",
-    #page_icon="❤️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -125,7 +124,7 @@ if submitted:
         st.subheader("Resultados del Análisis")
         
         risk_class = "high-risk" if prediction == 1 else "low-risk"
-        #result_icon = "⚠️" if prediction == 1 else "✅"
+        #result_icon = "" if prediction == 1 else ""
         result_text = "Riesgo Elevado" if prediction == 1 else "Riesgo Bajo"
         
         st.markdown(f"""
@@ -169,7 +168,7 @@ if submitted:
         st.caption("Factores de riesgo principales (valores normalizados)")
         
     except Exception as e:
-        st.error(f"❌ Error en el análisis: {str(e)}")
+        st.error(f" Error en el análisis: {str(e)}")
         st.info("Por favor verifique los datos ingresados e intente nuevamente")
 
 # Pie de página informativo
